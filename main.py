@@ -1,4 +1,5 @@
 import game
+import random
 import db_init
 def afficher_menu():
 
@@ -40,41 +41,91 @@ def choisir_option_valide(min_val, max_val, message):
 
             
     
-    
-
     # Liste des perso 
 personnages = [
-    {"1": "Guerrier", "ATK": 15, "DEF": 10, "PV": 100 },   
-    {"2": "Mage", "ATK": 20, "DEF": 5, "PV": 80},
-    {"3": "Archer", "ATK": 18, "DEF": 7, "PV": 90},
-    {"4": "Voleur", "ATK": 22, "DEF": 8, "PV": 85},
-    {"5": "Paladin", "ATK": 14, "DEF": 12, "PV": 110},
-    {"6": "Sorcier", "ATK": 25, "DEF": 3, "PV": 70},
-    {"7": "Chevalier", "ATK": 17, "DEF": 15, "PV": 120},
-    {"8": "Moine", "ATK": 19, "DEF": 9, "PV": 95},
-    {"9": "Berserker", "ATK": 23, "DEF": 6, "PV": 105},
-    {"10": "Chasseur", "ATK": 16, "DEF": 11, "PV": 100}
+    {"NAME": "Guerrier", "ATK": 15, "DEF": 10, "PV": 100 },   
+    {"NAME": "Mage", "ATK": 20, "DEF": 5, "PV": 80},
+    {"NAME": "Archer", "ATK": 18, "DEF": 7, "PV": 90},
+    {"NAME": "Voleur", "ATK": 22, "DEF": 8, "PV": 85},
+    {"NAME": "Paladin", "ATK": 14, "DEF": 12, "PV": 110},
+    {"NAME": "Sorcier", "ATK": 25, "DEF": 3, "PV": 70},
+    {"NAME": "Chevalier", "ATK": 17, "DEF": 15, "PV": 120},
+    {"NAME": "Moine", "ATK": 19, "DEF": 9, "PV": 95},
+    {"NAME": "Berserker", "ATK": 23, "DEF": 6, "PV": 105},
+    {"NAME": "Chasseur", "ATK": 16, "DEF": 11, "PV": 100}
 ]
 
 
-def demander_nom():
-    nom = input("Tapez votre nom :  \n" )
-    print(f"equipe de {nom} cree\n")
 
-def cree_equipe():
+def afficher_equipe():
+    hero = enumerate[personnages, 1]
+
+
+def demander_nom():
+     nom = input("Tapez votre nom :  \n" )
+     print(f"equipe de {nom} cree\n")
+
+def cree_equipe(personnages):
+    # creer liste vide 
     equipe = []
 
+#tant que la team est pas sup a 3
+    while len(equipe) < 3:
+        
+#creer une fonction pour afficher lequipe et afficher lequipe
+        afficher_equipe()
+        choix = choisir_option_valide(1 ,len(personnages) )
+# perso_choisi = liste de hero avec choix -1
+        perso_choisi = (personnages[choix-1])
+
+#ajouter a ma liste 
+        equipe.append(perso_choisi)
+
+#supprimer le perso de la liste
+        personnages.remove(perso_choisi)
+
+    return equipe
+    
+
+
+
+monstres = [
+    {"NAME": "Gobelin", "ATK": 10, "DEF": 5, "PV": 50},
+    {"NAME": "Orc", "ATK": 20, "DEF": 8, "PV": 120},
+    {"NAME": "Dragon", "ATK": 35, "DEF": 20, "PV": 300},
+    {"NAME": "Zombie", "ATK": 12, "DEF": 6, "PV": 70},
+    {"NAME": "Troll", "ATK": 25, "DEF": 15, "PV": 200},
+    {"NAME": "Spectre", "ATK": 18, "DEF": 10, "PV": 100},
+    {"NAME": "Golem", "ATK": 30, "DEF": 25, "PV": 250},
+    {"NAME": "Vampire", "ATK": 22, "DEF": 12, "PV": 150},
+    {"NAME": "Loup-garou", "ATK": 28, "DEF": 18, "PV": 180},
+    {"NAME": "Squelette", "ATK": 15, "DEF": 7, "PV": 90}
+]
 
 def  lancer_combat():
-    combat = 
+
+    # Comment lancer un combat
+
+
+    # tant que lequipe est vivante 
+    while 
+        #choisir un monstre au hazaard
+        monstres_aleatoir = random.choice(monstres)
+        print("Le monstre qui a ete selectionner aléatoirement est : ", monstres_aleatoir)
+        # faire commbattre lequipe avec un monstre choisi au hazard
+
+          
+
+
+
 
 def afficher_score():
-    score = 
+    pass 
 
 
 def jeu():
     #demander un nom  
-    nom = demander_nom()
+    nom =  demander_nom()
    
     # creer equipe
     equipe = cree_equipe()
@@ -100,21 +151,7 @@ def main():
             
     if option == '1':
         jeu()
-            #demander un nom  
-            
-                # Renvoyez le nom
 
-                #lister les perso dispo 
-
-                #cree une equipe sa veux die faire une nouvelle liste vide avec 3 perso 
-
-                # demander a choisir un perso
-                    
-                # Enlever le perso choisie cest avec list.pop et lafficher dans la nouvelle liste
-
-                # Afficher lequipe des 3 perso quon a prit
-                
-                #lancer le combat 
                 
     elif option == '2':
                 
@@ -133,20 +170,30 @@ main()
 
 
 
-# Comment cree une equipe 
 
-# creer une liste vide 
+
+# comment creer une equipe 
+
+
+# creer liste vide 
 '''# equipe = []'''
 
-''' faire une boucle pour que sa me demande de le faire 3x'''
+#tant que la team est pas sup a 3
+'''while equipe < 3'''
 
-# ajouter a cette liste 1 perso qui a ete afficher au prealable 
-'''# equipe.append(perso_choisie)'''
+#afficher lequipe 
+''' creer une fonction pour afficher lequipe'''
 
-# supprimer le perso de la liste afficher et rechoisir x2 
-'''# equipe.pop(personnage) '''
+# demander de tapper un numero valide 
+''' jles deja fais en haut'''
 
-# equipe fini
+# hero_choisi = liste de hero avec choix -1
+
+#ajouter a ma liste 
+''' equipe.append(perso_choisi)'''
+
+#supprimer le perso de la liste 
+''' equipe.pop(personnage)'''
 
 
 
@@ -197,15 +244,5 @@ if option == '1':
             
 
 
-elif option == '2':
-            
-            print("Voici les scores")
-            exit()
 
-elif option == '3':
-            print("Fin du programme \n Aurevoir"); 
-            exit()
-        
-
-main()
 '''
